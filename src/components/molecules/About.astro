@@ -4,12 +4,12 @@
   }
 </style>
 
-<section
+<div
       class="w-full max-w-5xl mx-auto px-4 min-h-screen flex flex-col justify-center items-center"
     >
       <h2 class="text-[var(--tertiary)] text-5xl font-bold">About</h2>
       <article class="mt-8">
-        <p class="text-white text-xl text indent-4">
+        <p class="text-white text-xl text indent-4 text-center sm:text-left">
           I am a passionate frontend developer with a keen focus on crafting
           dynamic and interactive web experiences. My toolkit includes React and
           Next.js for dynamic pages that are not only visually appealing but
@@ -21,7 +21,7 @@
           class="border border-white mt-6 p-4 rounded-md bg-white/30 backdrop-blur-md transition-all duration-200 hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]"
         >
           <h4 class="text-gray-800 text-3xl font-bold mb-4">Stack</h4>
-          <div class="flex items-center justify-between">
+          <div class="flex items-center flex-wrap gap-4 justify-start md:flex-nowrap md:justify-between">
             <img src="./react.svg" alt="React" width="50" />
             <img src="./nextjs.svg" alt="Next" width="50" />
             <img src="./astro.webp" alt="Astro" width="50" />
@@ -38,4 +38,4 @@
           </div>
         </div>
       </article>
-    </section>
+    </div>

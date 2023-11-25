@@ -1,27 +1,32 @@
 ---
 import Card from "../atoms/Card.astro";
 ---
+<style>
+  .list::-webkit-scrollbar {
+    display: none;
+  }
+</style>
 
-<section class="w-full max-w-5xl mx-auto px-4 min-h-screen flex flex-col justify-center items-center">
+<div class="w-full max-w-5xl mx-auto px-4 min-h-screen flex flex-col justify-center items-center">
   <h2 class="text-[var(--tertiary)] text-5xl font-bold">Some projects</h2>
-  <ul class="flex items-stretch gap-4 mt-8">
+  <ul class="flex items-stretch gap-4 mt-8 list max-w-full overflow-auto snap-x snap-mandatory">
     <Card
       title="Shop All"
       description="This is the first attempt to create an ecommerce site."
       image="./shopall.webp"
-      link="http://www.github.com"
+      link="https://github.com/SpagnoloCarlos/ShopAll"
     />
     <Card
       title="Spagnolo Shop"
       description="E-commerce site. It has a home page, catalog, product description, login and shopping cart coming soon."
       image="./spagnoloshop.webp"
-      link="http://www.github.com"
+      link="https://github.com/SpagnoloCarlos/e-commerce"
     />
     <Card
       title="Blog"
       description="Blog site developed with Next 13 and Tailwind, which uses its own api."
       image="./frontblog.webp"
-      link="http://www.github.com"
+      link="https://github.com/SpagnoloCarlos/front-blog"
     />
   </article>
 </section>

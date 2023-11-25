@@ -4,13 +4,23 @@ import Header from "../components/organisms/Header.astro"
 import About from "../components/molecules/About.astro";
 import Hero from "../components/molecules/Hero.astro"
 import Projects from "../components/molecules/Projects.astro"
+import Contact from "../components/molecules/Contact.astro";
 ---
 
 <Layout title="Spagnolo Carlos">
-  <main>
-    <Header />
-    <Hero />
-    <About />
-    <Projects />
+  <Header />
+  <main class="sm:snap-y sm:snap-mandatory relative w-full sm:h-screen sm:overflow-auto">
+    <section id="hero" class="snap-center">
+      <Hero />
+    </section>
+    <section id="about" class="snap-center">
+      <About />
+    </section>
+    <section id="projects" class="snap-center">
+      <Projects />
+    </section>
+    <section id="contact" class="snap-center">
+      <Contact />
+    </section>
   </main>
 </Layout>
