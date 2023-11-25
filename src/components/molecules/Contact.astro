@@ -40,8 +40,7 @@
           name="message"
           placeholder="Enter your message here..."
           required
-        >
-        </textarea>
+        />
       </div>
     </div>
     <div class="md:flex md:items-center">
@@ -74,6 +73,8 @@
     if (response.ok) {
       btn.disabled = false;
       span.innerText = "Your message has been sent successfully ✔";
+      const form = document.getElementById("contactForm") as HTMLFormElement;
+      form.reset()
     } else {
       btn.disabled = false;
       span.innerText = "An error occurred while sending the message. Please try again";
