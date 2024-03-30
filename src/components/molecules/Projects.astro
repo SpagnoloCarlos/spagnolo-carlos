@@ -9,7 +9,7 @@ import Card from "../atoms/Card.astro";
 
 <div class="w-full max-w-5xl mx-auto px-4 min-h-screen flex flex-col justify-center items-center">
   <h2 class="text-[var(--tertiary)] text-5xl font-bold">Some projects</h2>
-  <ul class="flex items-stretch gap-4 mt-8 list max-w-full overflow-auto snap-x snap-mandatory">
+  <ul class="mt-8 list max-w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     <Card
       title="Shop All"
       description="This is the first attempt to create an ecommerce site."
@@ -27,6 +27,18 @@ import Card from "../atoms/Card.astro";
       description="Blog site developed with Next 13 and Tailwind, which uses its own api."
       image="./frontblog.webp"
       link="https://github.com/SpagnoloCarlos/front-blog"
+    />
+    <Card
+      title="Sunnyside"
+      description="This is a solution to the Sunnyside agency landing page challenge on Frontend Mentor."
+      image="./sunnyside.webp"
+      link="https://github.com/SpagnoloCarlos/sunnyside"
+    />
+    <Card
+      title="Simple Coffee"
+      description="This is the solution to the devChallerges challenge called Simple Coffee."
+      image="./simple-coffee.webp"
+      link="https://github.com/SpagnoloCarlos/sunnyside"
     />
   </article>
 </section>
