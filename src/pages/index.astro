@@ -5,22 +5,23 @@ import About from "../components/molecules/About.astro";
 import Hero from "../components/molecules/Hero.astro"
 import Projects from "../components/molecules/Projects.astro"
 import Contact from "../components/molecules/Contact.astro";
+import { CONTENT } from "../utils/constants"
 ---
 
-<Layout title="Spagnolo Carlos">
-  <Header />
-  <main class="relative w-full sm:h-screen sm:overflow-auto">
-    <section id="hero" class="snap-center">
-      <Hero />
+<Layout title="Carlos Andres Spagnolo | Desarrollador Web">
+  <Header navigation={CONTENT.es.navigation} />
+  <main class="w-full">
+    <section id="hero">
+      <Hero greeting={CONTENT.es.greeting} profession={CONTENT.es.profession} />
     </section>
-    <section id="about" class="snap-center">
-      <About />
+    <section id="about">
+      <About title={CONTENT.es.navigation.about}  content={CONTENT.es.about} stack={CONTENT.es.navigation.stack} />
     </section>
-    <section id="projects" class="snap-center">
-      <Projects />
+    <section id="projects">
+      <Projects title={CONTENT.es.projects.title} description={CONTENT.es.projects.description} view={CONTENT.es.projects.view} />
     </section>
-    <section id="contact" class="snap-center">
-      <Contact />
+    <section id="contact">
+      <Contact title={CONTENT.es.navigation.contact} form={CONTENT.es.form} />
     </section>
   </main>
 </Layout>

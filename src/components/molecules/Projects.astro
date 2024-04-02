@@ -1,5 +1,22 @@
 ---
 import Card from "../atoms/Card.astro";
+
+interface IDescription {
+  all: string;
+  spagnolo: string;
+  sunnyside: string;
+  coffee: string;
+  blog: string;
+  translate: string;
+}
+
+interface Props {
+	title: string;
+  description: IDescription;
+  view: string;
+}
+
+const { title, description: {all, spagnolo, sunnyside, coffee, blog, translate}, view  } = Astro.props;
 ---
 <style>
   .list::-webkit-scrollbar {
@@ -8,37 +25,52 @@ import Card from "../atoms/Card.astro";
 </style>
 
 <div class="w-full max-w-5xl mx-auto px-4 min-h-screen flex flex-col justify-center items-center">
-  <h2 class="text-[var(--tertiary)] text-5xl font-bold">Some projects</h2>
+  <h2 class="text-[var(--tertiary)] text-5xl font-bold text-center">{title}</h2>
   <ul class="mt-8 list max-w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     <Card
       title="Shop All"
-      description="This is the first attempt to create an ecommerce site."
+      description={all}
       image="./shopall.webp"
       link="https://github.com/SpagnoloCarlos/ShopAll"
+      view={view}
     />
     <Card
       title="Spagnolo Shop"
-      description="E-commerce site. It has a home page, catalog, product description, login and shopping cart coming soon."
+      description={spagnolo}
       image="./spagnoloshop.webp"
       link="https://github.com/SpagnoloCarlos/e-commerce"
+      view={view}
     />
     <Card
       title="Sunnyside"
-      description="This is a solution to the Sunnyside agency landing page challenge on Frontend Mentor."
+      description={sunnyside}
       image="./sunnyside.webp"
       link="https://github.com/SpagnoloCarlos/sunnyside"
+      view={view}
     />
     <Card
       title="Simple Coffee"
-      description="This is the solution to the devChallerges challenge called Simple Coffee."
+      description={coffee}
       image="./simple-coffee.webp"
       link="https://github.com/SpagnoloCarlos/simple-coffee"
+      view={view}
+      hover={false}
+    />
+    <Card
+      title="Translate App"
+      description={translate}
+      image="./translate.webp"
+      link="https://github.com/SpagnoloCarlos/translate-app"
+      view={view}
+      hover={false}
     />
     <Card
       title="Blog"
-      description="Blog site developed with Next 13 and Tailwind, which uses its own api."
+      description={blog}
       image="./frontblog.webp"
       link="https://github.com/SpagnoloCarlos/front-blog"
+      view={view}
+      hover={false}
     />
   </article>
 </section>

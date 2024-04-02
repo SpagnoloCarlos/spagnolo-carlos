@@ -1,10 +1,26 @@
+---
+interface IForm {
+  name: string;
+  email: string;
+  text: string;
+  send: string;
+}
+
+interface Props {
+	title: string;
+  form: IForm
+}
+
+const { title, form: {name, email, text, send}  } = Astro.props;
+---
+
 <div class="w-full max-w-5xl mx-auto px-4 min-h-screen flex flex-col justify-center items-center">
-  <h2 class="text-[var(--tertiary)] text-5xl font-bold">Contact</h2>
+  <h2 class="text-[var(--tertiary)] text-5xl font-bold">{title}</h2>
   <form method="POST" id="contactForm" class="w-full max-w-xl p-4 bg-white/30 backdrop-blur-md rounded-lg shadow-md mt-8 transition-all duration-200 hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
     <div class="flex flex-wrap -mx-3 mb-6">
       <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
         <label class="block uppercase tracking-wide text-[#2C3333] text-xs font-bold mb-2" for="name">
-          Your Name
+          {name}
         </label>
         <input
           class="appearance-none block w-full bg-gray-100 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -17,7 +33,7 @@
       </div>
       <div class="w-full md:w-1/2 px-3">
         <label class="block uppercase tracking-wide  text-[#2C3333] text-xs font-bold mb-2" for="email">
-          Your Email
+          {email}
         </label>
         <input
           class="appearance-none block w-full bg-gray-100 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
@@ -32,7 +48,7 @@
     <div class="flex flex-wrap -mx-3 mb-6">
       <div class="w-full px-3">
         <label class="block uppercase tracking-wide  text-[#2C3333] text-xs font-bold mb-2" for="message">
-          Your Message
+          {text}
         </label>
         <textarea
           class=" no-resize appearance-none block w-full bg-gray-100 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white h-48 resize-none"
@@ -46,7 +62,7 @@
     <div class="md:flex md:items-center">
       <div class="flex items-center gap-4 md:w-full">
         <button id="button" class="shadow bg-[--secondary] transition-colors duration-200 disabled:bg-gray-400 hover:enabled:bg-[--primary] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
-          Send
+          {send}
         </button>
         <span id="response" class="text-[#2C3333] font-semibold"></span>
       </div>

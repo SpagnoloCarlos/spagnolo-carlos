@@ -1,3 +1,18 @@
+---
+interface INavigation {
+  home: string;
+  about: string;
+  projects: string;
+  contact: string;
+  stack: string
+}
+interface Props {
+	navigation: INavigation;
+}
+
+const { navigation: {home, about, projects, contact}  } = Astro.props;
+---
+
 <style>
   @media (min-width: 568px){
     .header {
@@ -15,25 +30,25 @@
     >
       <li>
         <button id="btn-hero" class="flex flex-col gap-1 [&:hover>span]:w-full">
-          Home
+          {home}
           <span class="self-center w-full sm:w-0 h-[2px] bg-[--secondary] transition-all duration-200"></span>
         </button>
       </li>
       <li>
         <button id="btn-about" class="flex flex-col gap-1 [&:hover>span]:w-full">
-          About
+          {about}
           <span class="self-center w-full sm:w-0 h-[2px] bg-[--secondary] transition-all duration-200"></span>
         </button>
       </li>
       <li>
         <button id="btn-projects" class="flex flex-col gap-1 [&:hover>span]:w-full">
-          Proyects
+          {projects}
           <span class="self-center w-full sm:w-0 h-[2px] bg-[--secondary] transition-all duration-200"></span>
         </button>
       </li>
       <li>
         <button id="btn-contact" class="flex flex-col gap-1 [&:hover>span]:w-full">
-          Contact
+          {contact}
           <span class="self-center w-full sm:w-0 h-[2px] bg-[--secondary] transition-all duration-200"></span>
         </button>
       </li>

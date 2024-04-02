@@ -1,16 +1,24 @@
 ---
-const { title, description, image, link } = Astro.props;
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+  view:string;
+  hover?: boolean;
+}
+const { title, description, image, link, view, hover = true } = Astro.props;
 ---
 
 <style>
-  .card-hover img {
-  }
-  .card-hover:hover img {
-    transform: translateY(calc(-100% + 256px));
+  @media (min-width: 576px){
+    .card-hover:hover img {
+      transform: translateY(calc(-100% + 256px));
+    }
   }
 </style>
 
-<li class="self-stretch card-hover snap-center">
+<li class={`self-stretch ${hover ? "card-hover" : ""}`}>
   <figure class="flex flex-col items-center h-full max-w-[288px] p-4 rounded-lg  bg-white/30 backdrop-blur-md transition-all duration-200 hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
     <div class="overflow-hidden flex-shrink-0 w-64 h-64 rounded-lg relative">
       <img class="w-full h-auto absolute top-0 transition-all duration-[5s] ease-in-out translate-y-0"  src={`${image}`} alt="Imagen principal">
@@ -18,7 +26,7 @@ const { title, description, image, link } = Astro.props;
     <figcaption class="flex flex-col mt-4 text-center h-full">
       <h2 class="text-xl font-semibold">{title}</h2>
       <p class="my-2 text-gray-800">{description}</p>
-      <a href={`${link}`} class="mt-[auto] px-4 py-2 text-white bg-[--secondary] rounded transition-colors duration-200 hover:bg-[--primary]">Ver en GitHub</a>
+      <a href={`${link}`} target="_blank" class="mt-[auto] px-4 py-2 text-white bg-[--secondary] rounded transition-colors duration-200 hover:bg-[--primary]">{view}</a>
     </figcaption>
   </figure>
 </li>
