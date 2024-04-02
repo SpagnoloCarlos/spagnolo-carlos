@@ -10,7 +10,7 @@ interface Props {
 	navigation: INavigation;
 }
 
-const { navigation: {home, about, projects, contact}  } = Astro.props;
+const { navigation: { home, about, projects, contact } } = Astro.props;
 ---
 
 <style>
@@ -24,7 +24,7 @@ const { navigation: {home, about, projects, contact}  } = Astro.props;
 <header
   class="flex items-center justify-center fixed top-0 z-[5] w-full p-4 bg-gray/5 backdrop-blur-md header"
 >
-  <nav>
+  <nav class="flex items-center gap-8">
     <ul
       class="flex gap-8 justify-center [&>li>button]:text-white [&>li>button]:text-lg"
     >
@@ -53,6 +53,17 @@ const { navigation: {home, about, projects, contact}  } = Astro.props;
         </button>
       </li>
     </ul>
+    <!-- <div class="hidden md:flex items-center gap-2 text-white mb-[4px]">
+      <span id="spanish" class="transition-color duration-300 text-[var(--cuaternary)]">Es</span>
+      <div class="relative">
+        <input type="checkbox" id="toggle" class="hidden"/>
+        <label for="toggle" class="flex items-center cursor-pointer">
+            <div id="toggleBar" class="relative w-12 h-6 bg-[var(--secondary)] rounded-full shadow-inner"/>
+            <div id="toggleButton" class="absolute w-6 h-6 bg-[var(--tertiary)] rounded-full shadow inset-y-0 left-0 transition-transform duration-300" />
+        </label>
+      </div>
+      <span id="english" class="transition-color duration-300">En</span>
+    </div> -->
   </nav>
 </header>
 
@@ -68,5 +79,21 @@ const { navigation: {home, about, projects, contact}  } = Astro.props;
   });
   document.querySelector("#btn-contact").addEventListener("click", function() {
     document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
+  });
+
+  document.querySelector("#toggle").addEventListener("click", function() {
+    const checked = this.checked;
+    const toggleButton = document.getElementById('toggleButton'); 
+    const es = document.getElementById('spanish'); 
+    const en = document.getElementById('english');
+    if (checked){
+      toggleButton.style.transform = 'translateX(100%)';
+      es.style.color = "#fff";
+      en.style.color = "#1dd9e1";
+    } else {
+      toggleButton.style.transform = 'translateX(0)';
+      es.style.color = "#1dd9e1";
+      en.style.color = "#fff";
+    }
   });
 </script>
