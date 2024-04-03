@@ -26,7 +26,7 @@ const { navigation: { home, about, projects, contact } } = Astro.props;
 >
   <nav class="flex items-center gap-8">
     <ul
-      class="flex gap-8 justify-center [&>li>button]:text-white [&>li>button]:text-lg"
+      class="flex gap-4 sm:gap-8 justify-center [&>li>button]:text-white [&>li>button]:text-md sm:[&>li>button]:text-lg"
     >
       <li>
         <button id="btn-hero" class="flex flex-col gap-1 [&:hover>span]:w-full">
@@ -81,7 +81,7 @@ const { navigation: { home, about, projects, contact } } = Astro.props;
     document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
   });
 
-  document.querySelector("#toggle").addEventListener("click", function() {
+  /* document.querySelector("#toggle").addEventListener("click", function() {
     const checked = this.checked;
     const toggleButton = document.getElementById('toggleButton'); 
     const es = document.getElementById('spanish'); 
@@ -95,5 +95,5 @@ const { navigation: { home, about, projects, contact } } = Astro.props;
       es.style.color = "#1dd9e1";
       en.style.color = "#fff";
     }
-  });
+  }); */
 </script>
